@@ -19,6 +19,8 @@ namespace MoneyMind
             Balance = balance;
         }
 
+        
+
         public void Deposit(decimal amount)
         {
             if (amount <= 0)
@@ -42,6 +44,11 @@ namespace MoneyMind
             }
 
             Balance -= amount;
+        }
+
+        internal string GetTotalSpending()
+        {
+            throw new NotImplementedException();
         }
     }
 }
