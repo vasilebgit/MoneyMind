@@ -46,9 +46,18 @@ namespace MoneyMind
             Balance -= amount;
         }
 
-        internal string GetTotalSpending()
+        public decimal GetTotalSpending(string accountNumber, List<Transaction> transactions)
         {
-            throw new NotImplementedException();
+            decimal totalSpending = 0;
+            foreach (Transaction transaction in transactions)
+            {
+                if (transaction.AccountNumber == accountNumber && transaction.Amount < 0)
+                {
+                    totalSpending += Math.Abs(transaction.Amount);
+                }
+            }
+            return totalSpending;
         }
+
     }
 }

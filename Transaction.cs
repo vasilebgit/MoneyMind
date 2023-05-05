@@ -12,6 +12,7 @@ public class Transaction
     public string Notes { get; set; }
     public string TransactionName { get; }
     public decimal TransactionAmount { get; }
+    public string AccountNumber { get; internal set; }
 
     public Transaction(decimal amount, DateTime date, string category, string notes)
     {

@@ -20,8 +20,8 @@ namespace MoneyMind
             Budget foodBudget = new Budget("Food", 300);
             Budget entertainmentBudget = new Budget("Entertainment", 200);
 
-            menu.AddBudget(foodBudget);
-            menu.AddBudget(entertainmentBudget);
+            //menu.AddBudget(foodBudget);
+            //menu.AddBudget(entertainmentBudget);
 
             // Create categories
             Category groceriesCategory = new Category("Groceries", 150);
@@ -54,5 +54,5 @@ namespace MoneyMind
         }
     }
 }
-    }
-}
+    
+

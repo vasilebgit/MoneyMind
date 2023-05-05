@@ -9,11 +9,13 @@ public class Menu
 {
     private Account _account;
     private List<Budget> _budgets;
+    private List<Transaction> _transactions;
 
     public Menu()
     {
         _account = new Account("", "", 0);
         _budgets = new List<Budget>();
+        _transactions = new List<Transaction>();
     }
 
     public void Start()
@@ -133,7 +135,7 @@ public class Menu
     private void ViewAccountDetails()
     {
         Console.WriteLine("Account balance: $" + _account.Balance);
-        Console.WriteLine("Total spending: $" + _account.GetTotalSpending());
+        Console.WriteLine("Total spending: $" + _account.GetTotalSpending(_account.AccountNumber, _transactions));
 
         foreach (Budget budget in _budgets)
         {
@@ -148,5 +150,11 @@ public class Menu
             Console.WriteLine(" Transactions:");
         }
     }
+
+    internal void SetAccountBalance(int v)
+    {
+        _account.Deposit(v);
+    }
+
 }
 
