@@ -10,6 +10,9 @@ public class Transaction
     public DateTime Date { get; set; }
     public string Category { get; set; }
     public string Notes { get; set; }
+    public string TransactionName { get; }
+    public decimal TransactionAmount { get; }
+    public string AccountNumber { get; internal set; }
 
     public Transaction(decimal amount, DateTime date, string category, string notes)
     {
@@ -17,5 +20,11 @@ public class Transaction
         Date = date;
         Category = category;
         Notes = notes;
+    }
+
+    public Transaction(string transactionName, decimal transactionAmount)
+    {
+        TransactionName = transactionName;
+        TransactionAmount = transactionAmount;
     }
 }

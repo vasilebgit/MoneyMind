@@ -19,6 +19,8 @@ namespace MoneyMind
             Balance = balance;
         }
 
+        
+
         public void Deposit(decimal amount)
         {
             if (amount <= 0)
@@ -43,5 +45,19 @@ namespace MoneyMind
 
             Balance -= amount;
         }
+
+        public decimal GetTotalSpending(string accountNumber, List<Transaction> transactions)
+        {
+            decimal totalSpending = 0;
+            foreach (Transaction transaction in transactions)
+            {
+                if (transaction.AccountNumber == accountNumber && transaction.Amount < 0)
+                {
+                    totalSpending += Math.Abs(transaction.Amount);
+                }
+            }
+            return totalSpending;
+        }
+
     }
 }
