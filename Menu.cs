@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 public class Menu
 {
@@ -30,24 +31,24 @@ public class Menu
             Console.WriteLine("3. Add a transaction");
             Console.WriteLine("4. View account details");
             Console.WriteLine("5. Quit");
-
-            int choice = int.Parse(Console.ReadLine());
-
+            
+            string choice = Console.ReadLine();
+            
             switch (choice)
             {
-                case 1:
+                case "1":
                     CreateBudget();
                     break;
-                case 2:
+                case "2":
                     CreateCategory();
                     break;
-                case 3:
+                case "3":
                     AddTransaction();
                     break;
-                case 4:
+                case "4":
                     ViewAccountDetails();
                     break;
-                case 5:
+                case "5":
                     quit = true;
                     break;
                 default:
