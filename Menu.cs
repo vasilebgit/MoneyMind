@@ -30,7 +30,8 @@ public class Menu
             Console.WriteLine("2. Create a new category");
             Console.WriteLine("3. Add a transaction");
             Console.WriteLine("4. View account details");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Add money to your account");
+            Console.WriteLine("404. Quit");
             
             string choice = Console.ReadLine();
             
@@ -49,6 +50,11 @@ public class Menu
                     ViewAccountDetails();
                     break;
                 case "5":
+                    Console.WriteLine("Insert the amount of money");
+                    int suma = int.Parse(Console.ReadLine());
+                    SetAccountBalance(suma);
+                    break;
+                case "404":
                     quit = true;
                     break;
                 default:
@@ -148,7 +154,6 @@ public class Menu
                 Console.WriteLine("  Spending in category: $" + category.GetTotalSpending());
                 Console.WriteLine("  Remaining budget for category: $" + (category.BudgetedAmount - category.GetTotalSpending()));
             }
-            Console.WriteLine(" Transactions:");
         }
     }
 
