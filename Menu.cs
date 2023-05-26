@@ -155,7 +155,21 @@ public class Menu
                 Console.WriteLine("  Remaining budget for category: $" + (category.BudgetedAmount - category.GetTotalSpending()));
             }
         }
+
+        Console.WriteLine("Enter account number:");
+        string accountNumber = Console.ReadLine();
+
+        // Display transactions for the selected account
+        Console.WriteLine("Transactions for account " + accountNumber + ":");
+        foreach (Transaction transaction in _transactions)
+        {
+            if (transaction.AccountNumber == accountNumber)
+            {
+                Console.WriteLine(transaction.TransactionName + ": $" + transaction.Amount);
+            }
+        }
     }
+
 
     internal void SetAccountBalance(int v)
     {
